@@ -1,0 +1,27 @@
+{
+    "name" : "Path Extract",
+    "description" : "",
+    "author" : "Nepgearsy",
+    "contact" : "http://steamcommunity.com/id/Nepgearsy",
+    "color" : "25 0 255",
+    "keybinds" : [
+        {
+            "keybind_id" : "extract_paths",
+            "name" : "extract paths key",
+            "description" : "EXTRACT!!!??!!",
+            "script_path" : "hashlist.lua",
+            "run_in_menu" : true,
+            "run_in_game" : true,
+            "localized" : false
+        },
+        {
+            "keybind_id" : "clean_list",
+            "name" : "Clean hashlist (put in exe path)",
+            "description" : "",
+            "script_path" : "cleanlist.lua",
+            "run_in_menu" : true,
+            "run_in_game" : true,
+            "localized" : false
+        }
+    ]
+}
