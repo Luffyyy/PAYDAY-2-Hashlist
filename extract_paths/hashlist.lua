@@ -422,5 +422,5 @@ DelayedCalls:Add("アルミル・ハシュリスト", 5, function()
     end
 
     --Comment to search only lua.
-    --find_all(extract)
+    find_all(extract)
 end)
