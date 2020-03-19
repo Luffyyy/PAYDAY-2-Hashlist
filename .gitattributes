@@ -1,0 +1,60 @@
+# Normalize all non-binary files line endings to LF upon `git add`/`git commit.`
+* text=auto
+
+# SOURCE CODE
+*.lua              text
+*.txt              text
+hashlist           text
+
+# CONFIG
+.gitattributes     text export-ignore
+.gitignore         text export-ignore
+.editorconfig      text
+
+# DOCUMENTATION
+*.md               text
+
+# BINARIES
+*.dll              binary
+*.exe              binary
+
+
+################################################################################
+## INFO
+################################################################################
+
+### WHAT IS THIS FILE?
+# This file when recognized by a git client, will help enforce consistency
+# across multiple environments/systems in regards to line endings(CRLF & LF).
+# Documentation - `.gitattributes`: https://git-scm.com/docs/gitattributes
+
+# It provides fine-grained control in comparison to the `core.autocrlf` and
+# `core.eol` git settings that may vary per system, while the `.gitattributes`
+# file has a higher priority than `.gitconfig` and travels with the repository.
+# Documentation - `.gitconfig`: https://git-scm.com/docs/git-config
+
+
+### WHY SHOULD I CARE?
+# The desired result is to ensure the repo contains normalized LF line endings,
+# notably avoiding unhelpful noise in diffs or issues incurred from mixed line
+# endings. Storing as LF ensures no surprises for line endings during checkout.
+# Additionally for checkout to the local working directory, line endings can be
+# forced to CRLF or LF per file where appropriate, which ensures the files have
+# compatible line endings where software expects a specific kind.
+
+
+### ATTRIBUTES
+# `text` normalizes the file(s) line endings to LF upon add/commit. (CRLF -> LF)
+# `text=auto` sets `text` if Git decides the matched file is not binary data.
+
+# `eol` enforces a line ending for a file when writing to the working directory.
+# `core.autocrlf` when set to `true` or `input` overrides the `core.eol` value.
+# `core.eol` is used for any files not explicitly set with an `eol` attr value.
+# `core.eol` uses the native line endings for your platform by default.
+
+# `binary` is an alias for `-text -diff`. The file won't be normalized(-text).
+# `-diff` indicates not to show a diff. Useful when diffs are not likely to be
+# meaningful such as generated content (SVG, Source Maps, Lockfiles).
+
+# `export-ignore` excludes matched files and directories during `git archive`,
+# which services like Github use to create releases of a project with.
