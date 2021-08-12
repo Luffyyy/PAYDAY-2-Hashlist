@@ -4,7 +4,7 @@
 # SOURCE CODE
 *.lua              text
 *.txt              text
-hashlist           text
+hashlist           text text eol=lf
 
 # CONFIG
 .gitattributes     text export-ignore
