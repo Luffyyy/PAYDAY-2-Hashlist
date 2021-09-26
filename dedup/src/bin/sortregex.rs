@@ -93,7 +93,7 @@ struct SortNode {
 }
 
 #[derive(PartialEq, Eq, PartialOrd, Ord, Clone, Debug)]
-struct Segment(Option<u128>, String, Option<u128>);
+struct Segment(Option<u128>, String, Option<u128>, String);
 impl Segment {
     fn new(text: &str) -> Segment {
         lazy_static! {
@@ -102,9 +102,9 @@ impl Segment {
 
         let m = RE.captures(text).unwrap();
         let ld = parse_num(&m[1]);
-        let t = String::from(&m[2]);
+        let t = m[2].to_lowercase();
         let rd = parse_num(&m[3]);
-        Segment(ld, t, rd)
+        Segment(ld, t, rd, m[2].into())
     }
 }
 
