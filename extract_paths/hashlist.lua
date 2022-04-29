@@ -449,6 +449,32 @@ DelayedCalls:Add("アルミル・ハシュリスト", 5, function()
         TryTexture("guis/textures/pd2/blackmarket/icons/deployables/outline/"..id)
     end
 
+    for id, tbl in pairs(tweak_data.blackmarket.player_styles) do
+        TryTexture("guis/textures/pd2/blackmarket/icons/player_styles/"..id, tbl.texture_bundle_folder and "guis/dlcs/"..tbl.texture_bundle_folder.."/textures/pd2/blackmarket/icons/player_styles/"..id)
+        TryTexture("guis/textures/pd2/blackmarket/icons/player_styles/outline/"..id, tbl.texture_bundle_folder and "guis/dlcs/"..tbl.texture_bundle_folder.."/textures/pd2/blackmarket/icons/player_styles/outline/"..id)
+    end
+
+    for id, tbl in pairs(tweak_data.blackmarket.gloves) do
+        TryTexture("guis/textures/pd2/blackmarket/icons/gloves/"..id, tbl.texture_bundle_folder and "guis/dlcs/"..tbl.texture_bundle_folder.."/textures/pd2/blackmarket/icons/gloves/"..id)
+        TryTexture("guis/textures/pd2/blackmarket/icons/gloves/outline/"..id, tbl.texture_bundle_folder and "guis/dlcs/"..tbl.texture_bundle_folder.."/textures/pd2/blackmarket/icons/gloves/outline/"..id)
+    end
+
+    for id, tbl in pairs(tweak_data.blackmarket.weapon_skins) do
+        local color_tweak = tweak_data.blackmarket.weapon_skins[id]
+        
+        if color_tweak and color_tweak.is_a_color_skin then
+            guis_catalog = "guis/"
+            bundle_folder = color_tweak.texture_bundle_folder
+
+            if bundle_folder then
+                guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
+            end
+            LogFound(guis_catalog .. "textures/pd2/blackmarket/icons/weapon_color/" .. id)
+        else
+            TryTexture("guis/textures/pd2/blackmarket/icons/weapon_skins/"..id, tbl.texture_bundle_folder and "guis/dlcs/"..tbl.texture_bundle_folder.."/textures/pd2/blackmarket/icons/weapon_skins/"..id)
+        end
+    end
+
     for id, tbl in pairs(tweak_data.hud_icons) do
         LogFound(tbl.texture)
     end

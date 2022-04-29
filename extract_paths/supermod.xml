@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<mod>
+	<native_module platform="mswindows" filename="blep.dll" />
+</mod>
