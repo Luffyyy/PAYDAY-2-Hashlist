@@ -6,7 +6,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-regex = "1.5.4"
-structopt = "0.3.23"
+regex = "1.6.0"
+structopt = {version = "0.3.23", default-features = false }
 lazy_static = "1.4.0"
 unicase = "2.6.0"
