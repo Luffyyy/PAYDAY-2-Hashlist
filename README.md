@@ -8,7 +8,7 @@ Based on [Frankelstner's hashlist](https://bitbucket.org/Frankelstner/pd2-hashli
 2. Click `Download ZIP`.
 3. Extract the ZIP.
 4. For Diesel Bundle Viewer copy the `hashlist` file to the Diesel Bundle Viewer `Data` folder.
-5. For Payday 2 Model Tool copy the `hashlist` file to the same folder as the Diesel Model Tool.
+5. For Payday 2 Model Tool copy the `hashlist` file to the same folder as the Payday 2 Model Tool.
 
 # Hashlist Mod (extract_paths)
 
